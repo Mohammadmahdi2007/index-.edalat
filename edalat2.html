@@ -1,0 +1,212 @@
+به نام تک مهدنس هستی
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدمات چوب عدالت</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            background-color: #f9f9f9; /* رنگ پس زمینه روشن */
+            background-image: url('background.jpg'); /* تصویر پس‌زمینه */
+            background-size: cover; /* اندازه پس‌زمینه */
+            background-attachment: fixed; /* ثبات پس‌زمینه */
+            font-family: 'Roboto', sans-serif; /* فونت صفحه */
+            text-align: center; /* متن در مرکز صفحه */
+            margin: 0;
+            padding: 0;
+            color: #333; /* رنگ متن */
+            font-size: 26px;
+        }
+        .header, .footer {
+            background-color: rgba(255, 255, 255, 0.8); /* پس‌زمینه سفید کمی شفاف */
+            padding: 20px; /* فاصله داخلی */
+            border-radius: 10px; /* لبه‌های گرد */
+            margin: 20px auto; /* فاصله از بالا */
+            max-width: 800px; /* حداکثر عرض محتوا */
+        }
+        h1, h2 {
+            margin: 0; /* حذف فاصله */
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.7); /* رنگ پس‌زمینه ناوبری */
+            color: white; /* رنگ متن */
+            padding: 10px; /* فاصله داخلی */
+        }
+        nav ul {
+            list-style-type: none; /* عدم نمایش گلوله ها */
+            padding: 0; /* حذف padding */
+        }
+        nav ul li {
+            display: inline; /* نمایش به صورت افقی */
+            margin: 0 15px; /* فاصله بین زبانه ها */
+        }
+        nav ul li a {
+            color: white; /* رنگ لینک ها */
+            text-decoration: none; /* حذف زیر خط لینک ها */
+        }
+        .page {
+            display: none; /* مخفی کردن همه صفحات به طور پیش‌فرض */
+        }
+        .active {
+            display: block; /* نمایش صفحه فعال */
+        }
+        .product-images img {
+            width: 150px; /* عرض تصویر */
+            height: auto; /* حفظ نسبت ابعاد */
+            margin: 5px; /* فاصله بین عکس‌ها */
+            border-radius: 8px; /* لبه‌های گرد عکس‌ها */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* سایه برای عکس‌ها */
+        }
+        /* استایل برای بخش نظرات */
+        .comments {
+            margin-top: 20px; /* فاصله بالا */
+        }
+        
+        .comments textarea {
+            width: 80%; /* عرض متن نظرات */
+            height: 100px; /* ارتفاع متن نظرات */
+            margin-top: 10px; /* فاصله بالای textarea */
+            border-radius: 5px; /* لبه‌های گرد */
+            border: 1px solid #ccc; /* حاشیه */
+            padding: 10px; /* فاصله داخلی */
+        }
+        .comments button {
+            margin-top: 10px; /* فاصله بالای دکمه */
+            padding: 10px 20px; /* فاصله داخلی دکمه */
+            background-color: #333; /* رنگ پس زمینه دکمه */
+            color: white; /* رنگ متن دکمه */
+            border: none; /* حذف حاشیه */
+            border-radius: 5px; /* لبه‌های گرد */
+            cursor: pointer; /* نشانه‌گر pointer */
+        }
+        .comments button:hover {
+            background-color: #555; /* تغییر رنگ در حالت hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>خدمات چوب عدالت</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showPage('home');">صفحه اصلی</a></li>
+            <li><a href="#" onclick="showPage('about');">درباره ما</a></li>
+            <li><a href="#" onclick="showPage('products');">محصولات</a></li>
+            <li><a href="#" onclick="showPage('guide');">راهنمایی</a></li>
+        </ul>
+    </nav>
+    <!-- صفحه اصلی -->
+    <div id="home" class="page active">
+        <h2>به دنبال کیفیت در خدمات چوب هستید؟</h2>
+        <p>ما به شما تضمین می‌کنیم که با بهترین مواد و بالاترین کیفیت، زیباترین و کاربردی‌ترین محصولات چوبی را طراحی و تولید کنیم.</p>
+        <label for="province-select">استان خود را انتخاب کنید:</label>
+        <select id="province-select">
+            <option value="">-- انتخاب کنید --</option>
+            <option value="tehran">تهران</option>
+            <option value="isfahan">اصفهان</option>
+            <option value="yazd">یزد</option>
+            <option value="khorasan">خراسان</option>
+            <option value="fars">فارس</option>
+            <option value="azarbaijan">آذربایجان شرقی</option>
+            <option value="chaharmahal">چهارمحال و بختیاری</option>
+            <option value="mazandaran">مازندران</option>
+            <option value="gilan">گیلان</option>
+            <option value="hormozgan">هرمزگان</option>
+            <option value="zanjan">زنجان</option>
+            <!-- سایر استان‌ها به دلخواه شما -->
+        </select>
+    </div>
+    <!-- صفحه درباره ما -->
+    <div id="about" class="page">
+        <h2>درباره ما</h2>
+        <p>ما به عنوان یک تیم حرفه‌ای در زمینه نجاری، از سال‌ها پیش به مشتریان خود خدمات با کیفیت ارائه می‌دهیم.</p>
+        
+        <div class="comments">
+            <h3>نظرات شما</h3>
+            <textarea placeholder="نظر خود را بنویسید..."></textarea>
+            <br>
+            <button type="button">ارسال نظر</button>
+        </div>
+    </div>
+    <!-- صفحه محصولات -->
+    <div id="products" class="page">
+        <h2>محصولات ما</h2>
+        <label for="product-category">دسته بندی محصولات:</label>
+        <select name="product-category" id="product-category" onchange="showProducts(this.value)">
+            <option value="">-- انتخاب کنید --</option>
+            <option value="cabinets">کابینت</option>
+            <option value="beds">تخت</option>
+            <option value="wardrobes">کمد</option>
+            <option value="stairs">پله</option>
+            <option value="decorations">دکوریسیون</option>
+        </select>
+        <div class="product-images" id="product-images">
+            <div id="cabinets" class="hidden">
+                <h3>کابینت</h3>
+                <img src="cabinets1.jpg" alt="کابینت نمونه 1">
+                <img src="cabinets2.jpg" alt="کابینت نمونه 2">
+                <img src="cabinets3.jpg" alt="کابینت نمونه 3">
+            </div>
+            <div id="beds" class="hidden">
+                <h3>تخت</h3>
+                <img src="beds1.jpg" alt="تخت نمونه 1">
+                <img src="beds2.jpeg" alt="تخت نمونه 2">
+                <img src="beds3.jpg" alt="تخت نمونه 3">
+            </div>
+            <div id="wardrobes" class="hidden">
+                <h3>کمد</h3>
+                <img src="wardrobes1.jpg" alt="کمد نمونه 1">
+                <img src="wardrobes2.jpg" alt="کمد نمونه 2">
+                <img src="wardrobes3.jpg" alt="کمد نمونه 3">
+            </div>
+            <div id="stairs" class="hidden">
+                <h3>پله</h3>
+                <img src="stairs1.jpg" alt="پله نمونه 1">
+                <img src="stairs2.jpg" alt="پله نمونه 2">
+                <img src="stairs3.jpg" alt="پله نمونه 3">
+            </div>
+            <div id="decorations" class="hidden">
+                <h3>دکوریسیون</h3>
+                <img src="decor1.jpg" alt="دکوریسیون نمونه 1">
+                <img src="decor2.jpg" alt="دکوریسیون نمونه 2">
+                <img src="decor3.jpg" alt="دکوریسیون نمونه 3">
+            </div>
+        </div>
+    </div>
+    <!-- صفحه راهنمایی -->
+    <div id="guide" class="page">
+        <h2>راهنمایی</h2>
+        <h3>توضیحات درباره صنایع چوب</h3>
+        <p>صنایع چوب یکی از قدیمی‌ترین و پرکاربردترین صنایع در جهان است. از تولید مبلمان و دکوراسیون داخلی گرفته تا ساخت و ساز و طراحی، چوب به عنوان یک متریال طبیعی و زیبا، در بسیاری از زمینه‌ها مورد استفاده قرار می‌گیرد. با توجه به تنوع بسیار زیادی که در انواع و کیفیت چوب وجود دارد، می‌توان محصولات مختلفی با کاربری‌های مختلف تولید کرد.</p>
+    </div>
+    <div class="footer">
+        <h3>اطلاعات تماس</h3>
+        <p>نجف آباد خیابان 15 خرداد مرکزی خیابان 17 شهریور</p>
+        <p>شماره تماس: 09330913147</p>
+    </div>
+    <script>
+        // عملکرد نمایش صفحات
+        function showPage(page) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(p => {
+                p.classList.remove('active'); // مخفی کردن همه صفحات
+            });
+            document.getElementById(page).classList.add('active'); // نمایش صفحه انتخاب شده
+        }
+        // عملکرد بارگذاری تصاویر
+        document.getElementById('product-category').addEventListener('change', function() {
+            const selectedCategory = this.value;
+            const productImagesDivs = document.querySelectorAll('.product-images > div');
+            productImagesDivs.forEach(div => {
+                div.classList.add('hidden'); // مخفی کردن همه تصاویر
+            });
+            if (selectedCategory) {
+                document.getElementById(selectedCategory).classList.remove('hidden'); // نمایش تصاویر دسته انتخابی
+            }
+        });
+    </script>
+</body>
+</html>
