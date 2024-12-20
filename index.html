@@ -15,6 +15,7 @@
             font-family: 'Roboto', sans-serif; /* فونت صفحه */
             text-align: center; /* متن در مرکز صفحه */
             color: #333; /* رنگ متن */
+            direction: rtl; /* راستچین کردن */
         }
         #signup-page {
             display: flex;
@@ -92,6 +93,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#" onclick="showPage('guide');">راهنمایی</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('questions');">سوالات</a> <!-- لینک جدید -->
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -101,7 +105,7 @@
             <!-- صفحه اصلی -->
             <div id="home" class="page active">
                 <h2>به دنبال کیفیت در خدمات چوب هستید؟</h2>
-                <p>ما به شما تضمین می‌کنیم که با بهترین مواد و بالاترین کیفیت، زیباترین و کاربردی‌ترین محصولات چوبی را طراحی و تولید کنیم.</p>
+                <p>خدمات چوب عدالت از سال های گذشته با ارائه بهترین خدانت کار خود را در زمینه چول آغاز نمده و اکنون بهتر از سالهای گذشته به مشتریان خدمات ارائهمیدهد </p>
                 <div class="form-group">
                     <label for="province-select">استان خود را انتخاب کنید:</label>
                     <select id="province-select" class="form-control">
@@ -117,14 +121,13 @@
                         <option value="gilan">گیلان</option>
                         <option value="hormozgan">هرمزگان</option>
                         <option value="zanjan">زنجان</option>
-                        <!-- سایر استان‌ها به دلخواه شما -->
                     </select>
                 </div>
             </div>
             <!-- صفحه درباره ما -->
             <div id="about" class="page">
                 <h2>درباره ما</h2>
-                <p>ما به عنوان یک تیم حرفه‌ای در زمینه نجاری، از سال‌ها پیش به مشتریان خود خدمات با کیفیت ارائه می‌دهیم.</p>
+                <p>ما به عنوان یک تیم حرفه‌ای در زمینه نجاری، از سال‌ها پیش  کار خود را شروع کرده و با بهترین کیفیت و متریال موجود در بازار در حال ارائه خدمات به مشتریان خود هستیم </p>
                 <div class="comments">
                     <h3>نظرات شما</h3>
                     <textarea placeholder="نظر خود را بنویسید..." class="form-control"></textarea>
@@ -181,7 +184,17 @@
             <div id="guide" class="page">
                 <h2>راهنمایی</h2>
                 <h3>توضیحات درباره صنایع چوب</h3>
-                <p>صنایع چوب یکی از قدیمی‌ترین و پرکاربردترین صنایع در جهان است. از تولید مبلمان و دکوراسیون داخلی گرفته تا ساخت و ساز و طراحی، چوب به عنوان یک متریال طبیعی و زیبا، در بسیاری از زمینه‌ها مورد استفاده قرار می‌گیرد.</p>
+                <p>صنایع چوب یکی از قدیمی‌ترین و پرکاربردترین صنایع ایران است که امروزه روز افراد زیادی در آن فعالیت دارند. عدالت چوب هم یکی از این کارگاه‌ها هست که در این زمینه فعالیت دارد و شما میتوانید همین الان با ما شروع به  همکاری کنید اگر سوالی دارد در صفحه سوالات با ما درمیان بگذارید </p>
+            </div>
+            <!-- صفحه سوالات -->
+            <div id="questions" class="page">
+                <h2>سوالات شما</h2>
+                <p>لطفاً سوالات خود را در باکس زیر بنویسید و بر روی دکمه ارسال کلیک کنید.</p>
+                <div class="form-group">
+                    <textarea placeholder="سوال خود را اینجا بنویسید..." class="form-control" id="question-input"></textarea>
+                    <br>
+                    <button type="button" class="btn btn-primary" onclick="submitQuestion()">ارسال سوال</button>
+                </div>
             </div>
         </div>
         <!-- بخش اطلاعات حساب کاربری -->
@@ -201,7 +214,7 @@
     <div class="text-right">
         <span style="font-size: 18px;">ساخته شده با عشق ❤️</span>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.bootstrapcdn.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
@@ -235,6 +248,16 @@
             });
             document.getElementById(page).classList.add('active'); // اضافه کردن کلاس active به صفحه انتخاب شده
             document.getElementById(page).style.display = 'block'; // نمایش صفحه انتخاب شده
+        }
+        // ارسال سوالات
+        function submitQuestion() {
+            const question = document.getElementById('question-input').value;
+            if (question) {
+                alert("سوال شما با موفقیت ارسال شد!"); // نمایش پیام موفقیت
+                document.getElementById('question-input').value = ''; // پاک کردن فرم
+            } else {
+                alert("لطفاً سوال خود را وارد کنید."); // پیغام خطا
+            }
         }
         // عملکرد بارگذاری تصاویر
         document.getElementById('product-category').addEventListener('change', function () {
