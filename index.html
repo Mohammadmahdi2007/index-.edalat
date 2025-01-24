@@ -6,16 +6,18 @@
     <title>خدمات چوب عدالت</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap"> <!-- فونت جدید -->
     <style>
         body {
             background-color: #f9f9f9; /* رنگ پس زمینه روشن */
             background-image: url('background.jpg'); /* تصویر پس‌زمینه */
             background-size: cover; /* اندازه پس‌زمینه */
             background-attachment: fixed; /* ثبات پس‌زمینه */
-            font-family: 'Roboto', sans-serif; /* فونت صفحه */
+            font-family: 'Vazirmatn', sans-serif; /* فونت جدید */
             text-align: center; /* متن در مرکز صفحه */
             color: #333; /* رنگ متن */
             direction: rtl; /* راستچین کردن */
+            font-size: 18px; /* اندازه فونت بزرگتر */
         }
         #signup-page {
             display: flex;
@@ -94,7 +96,10 @@
                         <a class="nav-link" href="#" onclick="showPage('guide');">راهنمایی</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="showPage('questions');">سوالات</a> <!-- لینک جدید -->
+                        <a class="nav-link" href="#" onclick="showPage('questions');">سوالات</a> <!-- لینک سوالات -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('materials');">جنس و برند</a> <!-- لینک جدید جنس و برند -->
                     </li>
                 </ul>
             </div>
@@ -105,7 +110,7 @@
             <!-- صفحه اصلی -->
             <div id="home" class="page active">
                 <h2>به دنبال کیفیت در خدمات چوب هستید؟</h2>
-                <p>خدمات چوب عدالت از سال های گذشته با ارائه بهترین خدانت کار خود را در زمینه چول آغاز نمده و اکنون بهتر از سالهای گذشته به مشتریان خدمات ارائهمیدهد </p>
+                <p>ما به شما تضمین می‌کنیم که با بهترین مواد و بالاترین کیفیت، زیباترین و کاربردی‌ترین محصولات چوبی را طراحی و تولید کنیم.</p>
                 <div class="form-group">
                     <label for="province-select">استان خود را انتخاب کنید:</label>
                     <select id="province-select" class="form-control">
@@ -127,7 +132,7 @@
             <!-- صفحه درباره ما -->
             <div id="about" class="page">
                 <h2>درباره ما</h2>
-                <p>ما به عنوان یک تیم حرفه‌ای در زمینه نجاری، از سال‌ها پیش  کار خود را شروع کرده و با بهترین کیفیت و متریال موجود در بازار در حال ارائه خدمات به مشتریان خود هستیم </p>
+                <p>ما به عنوان یک تیم حرفه‌ای در زمینه نجاری، از سال‌ها پیش به مشتریان خود خدمات با کیفیت ارائه می‌دهیم.</p>
                 <div class="comments">
                     <h3>نظرات شما</h3>
                     <textarea placeholder="نظر خود را بنویسید..." class="form-control"></textarea>
@@ -184,7 +189,7 @@
             <div id="guide" class="page">
                 <h2>راهنمایی</h2>
                 <h3>توضیحات درباره صنایع چوب</h3>
-                <p>صنایع چوب یکی از قدیمی‌ترین و پرکاربردترین صنایع ایران است که امروزه روز افراد زیادی در آن فعالیت دارند. عدالت چوب هم یکی از این کارگاه‌ها هست که در این زمینه فعالیت دارد و شما میتوانید همین الان با ما شروع به  همکاری کنید اگر سوالی دارد در صفحه سوالات با ما درمیان بگذارید </p>
+                <p>صنایع چوب یکی از قدیمی‌ترین و پرکاربردترین صنایع ایران است که امروزه روز افراد زیادی در آن فعالیت دارند. عدالت چوب هم یکی از این کارگاه‌ها هست که در این زمینه فعالیت دارد و شما می‌توانید هر گونه سوال خود را در باکس زیر از ما و تیم حرفه‌ای ما بپرسید.</p>
             </div>
             <!-- صفحه سوالات -->
             <div id="questions" class="page">
@@ -195,6 +200,17 @@
                     <br>
                     <button type="button" class="btn btn-primary" onclick="submitQuestion()">ارسال سوال</button>
                 </div>
+            </div>
+            <!-- صفحه جنس و برند -->
+            <div id="materials" class="page">
+                <h2>جنس و برند</h2>
+                <p>در این بخش شما می‌توانید جنس و برند محصولات ما را مشاهده کنید.</p>
+                <ul class="list-group">
+                    <li class="list-group-item">جنس : ام دی اف ایرانی </li>
+                    <li class="list-group-item"> برند : پاکچوب : باکچوب یکی از بهترین تولید کننده های ام دی اف در ایران است که چندین سال است در این زمینه در حال ارائه خدماتاست   </li>
+                    <li class="list-group-item">برند 1: برند الف</li>
+                    <li class="list-group-item">برند 2: برند ب</li>
+                </ul>
             </div>
         </div>
         <!-- بخش اطلاعات حساب کاربری -->
@@ -214,7 +230,7 @@
     <div class="text-right">
         <span style="font-size: 18px;">ساخته شده با عشق ❤️</span>
     </div>
-    <script src="https://code.jquery.bootstrapcdn.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
